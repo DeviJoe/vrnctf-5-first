@@ -1,0 +1,53 @@
+# Обязательные поля
+# Имя задачи на CTFd
+name: Unknown Substituition Cipher
+# Никнейм в Telegram
+author: "@alexereh"
+# Описание таска на платформе.
+description: | 
+  Гронсвельд решил сотрудникам своей дешифровальной службы подарить 
+  в честь некого немецкого праздника piроги, 
+  в которых он оставил данное в файле сообщение. 
+# Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
+category: crypto
+# Оставляем как есть - цена таски
+value: 100
+# Не трогаем - тип соревнования
+type: dynamic
+
+extra:
+    # Стартовая цена
+    initial: 100
+    # Сколько команд должны решить, чтобы цена упала до минимума
+    decay: 10
+    # Минимальная цена
+    minimum: 10
+
+# Флаг.
+flags:
+  - vrnctf{N07_M4NY_P13S}
+
+# Для админов
+# topics:
+#   - information disclosure
+#   - buffer overflow
+#   - memory forensics
+
+# Для участников
+# tags:
+#   - web
+#   - sandbox
+#   - js
+
+# Секция с файликами, которые отдаются участниками. Относительный путь от папки public
+files:
+  - public/encrypt.txt
+
+# Подсказки. Можно передавать словари и строки
+hints:
+    - Не у всех чисел есть конечное число знаков после запятой.
+
+
+# Отображение на платформе. visible/hidden
+state: visible
+version: "0.1"
