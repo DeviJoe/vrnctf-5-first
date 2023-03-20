@@ -1,0 +1,18 @@
+name: runner
+author: "@jim_amlt"
+description:
+  #сюда бы пикчу... https://w7.pngwing.com/pngs/478/945/png-transparent-sonic-the-hedgehog-youtube-wiki-know-your-meme-fast-sonic-the-hedgehog-logo-meme.png
+category: reverse
+value: 100
+type: dynamic
+
+extra:
+    initial: 100
+    decay: 10
+    minimum: 10
+
+flags:
+  - vrnctf{f4573r_7h4n_7h3_f457357_blu3_h3d63h06}
+
+state: visible
+version: "0.1"
