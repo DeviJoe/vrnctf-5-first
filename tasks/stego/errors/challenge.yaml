@@ -1,0 +1,55 @@
+# Манифест развертывания задачи на CTFd
+# Полный пример можно посмотреть в документации -- https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+# Необязательные, но нужные вам секции можно раскомментировать 
+
+# Обязательные поля
+# Имя задачи на CTFd
+name: Errors
+# Никнейм в Telegram
+author: "@kotz1k"
+# Описание таска на платформе.
+description: | 
+  У нас есть текст, но в нем много ошибок, попробуйте найти их.
+# Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
+category: stegano
+# Оставляем как есть - цена таски
+value: 100
+# Не трогаем - тип соревнования
+type: dynamic
+
+extra:
+    # Стартовая цена
+    initial: 100
+    # Сколько команд должны решить, чтобы цена упала до минимума
+    decay: 10
+    # Минимальная цена
+    minimum: 10
+
+# Флаги. Их может быть очень много, но обычно делают один
+flags:
+  # Флаг можно задать так
+  - vrnctf{wowyoureallyknowenglish}
+
+# Примечания для админов, не видны участникам
+# Разрешены строки
+
+# topics:
+#   - information disclosure
+#   - buffer overflow
+#   - memory forensics
+
+# Публичны, видят участники. Можно вешать теги на задачи
+# tags:
+#   - web
+#   - sandbox
+#   - js
+
+# Секция с файликами, которые отдаются участниками. Относительный путь от папки public
+files:
+  - public/some_text.txt
+
+
+# Отображение на платформе. visible/hidden
+state: visible
+# Версия вашей задачи
+version: "0.1"
