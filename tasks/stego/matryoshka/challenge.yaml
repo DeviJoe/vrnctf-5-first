@@ -1,0 +1,55 @@
+# Манифест развертывания задачи на CTFd
+# Полный пример можно посмотреть в документации -- https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+# Необязательные, но нужные вам секции можно раскомментировать 
+
+# Обязательные поля
+# Имя задачи на CTFd
+name: Matryoshka
+# Никнейм в Telegram
+author: "@kotz1k"
+# Описание таска на платформе.
+description: | 
+  Что-то нам подсказывает, что фотографии могут быть не только фотографиями...
+# Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
+category: stegano
+# Оставляем как есть - цена таски
+value: 100
+# Не трогаем - тип соревнования
+type: dynamic
+
+extra:
+    # Стартовая цена
+    initial: 100
+    # Сколько команд должны решить, чтобы цена упала до минимума
+    decay: 10
+    # Минимальная цена
+    minimum: 10
+
+# Флаги. Их может быть очень много, но обычно делают один
+flags:
+  # Флаг можно задать так
+  - vrnctf{d0_y0u_kn0w_4b0u7_h1dd3n_f1l35}
+
+# Примечания для админов, не видны участникам
+# Разрешены строки
+
+# topics:
+#   - information disclosure
+#   - buffer overflow
+#   - memory forensics
+
+# Публичны, видят участники. Можно вешать теги на задачи
+# tags:
+#   - web
+#   - sandbox
+#   - js
+
+# Секция с файликами, которые отдаются участниками. Относительный путь от папки public
+files:
+  - public/matryoshka.jpg
+
+
+# Отображение на платформе. visible/hidden
+state: visible
+# Версия вашей задачи
+version: "0.1"
