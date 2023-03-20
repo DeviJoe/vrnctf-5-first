@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  hash:
+    ports:
+        - "5678:5678"
+    image: test
+    command:
+        - "0"
+        - "5678"
+        - "./pppp"
