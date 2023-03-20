@@ -3,7 +3,7 @@ author: "@jim_amlt"
 description: |
   Мы нашли странную дверь, когда исследовали руины, но она не открывается...
   Может быть, мы сможем как-то посмотреть на внутреннее устройство двери?
-#сюда бы пикчу... https://codigoespagueti.com/wp-content/uploads/2022/11/suzume-no-tojimari-nuevo-trailer.jpg
+  ![image](https://codigoespagueti.com/wp-content/uploads/2022/11/suzume-no-tojimari-nuevo-trailer.jpg "image")
 category: reverse
 value: 100
 type: dynamic
@@ -15,6 +15,9 @@ extra:
 
 flags:
   - vrnctf{7r345ur3_15_y0u_4nd_y0ur_fr13nd5}
+
+files:
+  - public/ruins.jar
 
 state: visible
 version: "0.1"
