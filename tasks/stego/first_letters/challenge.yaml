@@ -28,7 +28,12 @@ extra:
 # Флаги. Их может быть очень много, но обычно делают один
 flags:
   # Флаг можно задать так
-  - vrnctf{AKROSTIC}
+  - {
+      type: "static",
+      content: "vrnctf{ACROSTIC}",
+      data: "case_insensitive",
+    }
+  
 
 # Примечания для админов, не видны участникам
 # Разрешены строки
