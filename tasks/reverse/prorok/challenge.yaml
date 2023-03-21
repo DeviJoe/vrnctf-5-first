@@ -1,0 +1,21 @@
+name: prorok
+author: "@jim_amlt"
+description: |
+  ![image](https://cs10.pikabu.ru/post_img/big/2020/11/22/9/1606059010158632964.png "image")
+category: reverse
+value: 100
+type: dynamic
+
+extra:
+    initial: 100
+    decay: 10
+    minimum: 10
+
+flags:
+  - vrnctf{7h3_574r5_kn0w_4_l07_4nd_4r3_51l3n7}
+
+files:
+  - public/prorok_linux64
+
+state: visible
+version: "0.1"
