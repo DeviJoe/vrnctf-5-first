@@ -15,8 +15,8 @@ extra:
 flags:
   - vrnctf{r6b_fr35c0}
 
- files:
-   - public/image.png
+files:
+  - public/image.png
 
 state: visible
 version: "0.1"
