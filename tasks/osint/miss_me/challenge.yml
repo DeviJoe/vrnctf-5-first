@@ -1,0 +1,26 @@
+name: miss_me
+author: "@jim_amlt"
+description: |
+  Мне кажется или на этой фотографии чего-то не хватает?..
+
+  https://drive.google.com/file/d/1UREnranW-Ia5ZgMYmYpYJQYrKRQaE1q0
+
+  Примечание: обернуть в vrnctf{...}
+
+  И аниме тяночка просто так:
+  <img src="https://sun9-61.userapi.com/impg/CSAYRd5BLSO9L37luHXTI_rIAt75tHR3GiaRLw/C80q6g8M_XQ.jpg?size=1589x2160&quality=96&sign=b5c353a621fbfc013c9e08f461febb62&type=album" style="display: inline;">
+category: osint
+value: 100
+type: dynamic
+
+extra:
+  initial: 100
+  decay: 10
+  minimum: 10
+
+flags:
+  - vrnctf{NTT_Docomo_Yoyogi_Building}
+  - vrnctf{NTT Docomo Yoyogi Building}
+
+state: visible
+version: "0.1"
