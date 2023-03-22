@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  brute_me:
+    build: .
+    ports:
+        - "5678:5678"

@@ -1,0 +1,31 @@
+name: brute_me
+author: "@jim_amlt"
+description: |
+  Я делал задание на реверс, но потом случайно забыл флаг...
+  Я помню, что в нем было название какого-то хорошего аниме с высоким рейтингом, ф пробелы я заменил на _
+  Можете мне помочь вспомнить его?
+  ```
+  nc hostname 5678
+  ```
+  ![bestgirl](https://sun9-71.userapi.com/impg/bx_FaPVnB3gqFU5G-3mAQyP5qunb6IkAZVlKpg/1Nz-yNQId3E.jpg?size=1100x1693&quality=96&sign=b828c936ed0dc646f4fdc3f45a52f36e&type=album "bestgirl")
+
+category: reverse
+value: 100
+type: dynamic
+
+extra:
+    initial: 100
+    decay: 10
+    minimum: 10
+
+connection_info: nc hostname 5678
+
+flags:
+  - {
+    type: "static",
+    content: "vrnctf{Mo_Dao_Zu_Shi:_Wanjie_Pian}",
+    data: "case_insensitive",
+  }
+
+state: visible
+version: "0.1"
