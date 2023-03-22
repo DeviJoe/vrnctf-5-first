@@ -1,0 +1,53 @@
+# Обязательные поля
+# Имя задачи на CTFd
+name: Это баз... наистандартнейший шифр
+# Никнейм в Telegram
+author: "@alexereh"
+# Описание таска на платформе.
+description: | 
+  Без лишних слов...
+# Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
+category: crypto
+# Оставляем как есть - цена таски
+value: 100
+# Не трогаем - тип соревнования
+type: dynamic
+
+extra:
+    # Стартовая цена
+    initial: 100
+    # Сколько команд должны решить, чтобы цена упала до минимума
+    decay: 10
+    # Минимальная цена
+    minimum: 10
+
+# Флаг.
+flags:
+  # Нечувствительный к регистру флаг (особенности Морзянки требуют)
+  - {
+    type: "static",
+    content: "vrnctf{B4SED_M0RSE}",
+    data: "case_insensitive",
+  }
+
+
+# Для админов
+# topics:
+#   - information disclosure
+#   - buffer overflow
+#   - memory forensics
+
+# Для участников
+# tags:
+#   - web
+#   - sandbox
+#   - js
+
+# Секция с файликами, которые отдаются участниками. Относительный путь от папки public
+files:
+  - public/encrypt.txt
+
+# Отображение на платформе. visible/hidden
+state: visible
+# Версия вашей задачи
+version: "0.1"
