@@ -1,0 +1,22 @@
+name: Strange file
+author: "@Ichinichi"
+description: | 
+  При задержании преступник решил удалить все файлы с жесткого диска, но все что он успел - стереть расширения.
+  Определите тип файла, и узнайте, что внутри
+category: forensic
+value: 100
+type: dynamic
+
+extra:
+    initial: 100
+    decay: 10
+    minimum: 10
+
+flags:
+  - vrnctf{pl4y574710n_1m4g3}
+
+files:
+  - public/file
+
+state: visible
+version: "0.1"
