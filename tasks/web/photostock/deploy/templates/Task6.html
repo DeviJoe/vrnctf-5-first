@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Обои FULLHD+ скачать бесплатно</title>
+</head>
+<body>
+{% for image in images %}
+{% if image[1] %}
+<img src="{{ url_for('static', path='Task6/images/'+image[0]) }}" alt="" hidden="hidden">
+{% else %}
+<img src="{{ url_for('static', path='Task6/images/'+image[0]) }}" alt="">
+{% endif %}
+{% endfor %}
+</body>
+</html>
