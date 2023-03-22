@@ -1,0 +1,22 @@
+name: Mystery
+author: "@Ichinichi"
+description: | 
+  Товарищ майор решил начать утро со своего любимого занятия - чтения чужих переписок. Один из мемов показался ему очень уж подозрительным, но он никак не мог понять, в чем дело.
+  Помогите товарищу майору определить, что же с мемом не так
+category: stegano
+value: 100
+type: dynamic
+
+extra:
+    initial: 100
+    decay: 10
+    minimum: 10
+
+flags:
+  - vrnctf{r6b_fr35c0}
+
+files:
+  - public/image.png
+
+state: visible
+version: "0.1"
