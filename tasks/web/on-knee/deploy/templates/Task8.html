@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', path='Task8.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='Task8.js') }}">
+    <title>СУБД "На коленке"</title>
+</head>
+<body>
+<div class="container">
+    <section class="form">
+        <form method="POST" action="{{ url_for('submit_form') }}">
+            <div class="mb-3 row">
+                <div>
+                    <label for="login" class="col-sm-2 col-form-label">Login</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="login" name="login">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div>
+                    <label for="password" class="col-sm-2 col-form-label">Password</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+            </div>
+        </form>
+    </section>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Номер</th>
+            <th scope="col">Таблица</th>
+            <th scope="col">Права доступа</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>users</td>
+            <td>Все пользователи</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>amoguses</td>
+            <td>Зарегистрированные любители among us</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>animes</td>
+            <td>Зарегистрированные любители аниме</td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>geese</td>
+            <td>Зарегистрированные любители гусей</td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>memes</td>
+            <td>Зарегистрированные любители мемов</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <section class="form">
+        <form method="POST" action="{{ url_for('run_query') }}">
+            <div class="mb-3 row">
+                <div>
+                    <label for="sql" class="col-sm-2 col-form-label">SQL_query:</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="sql" name="sql" value="SELECT * FROM">
+                </div>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Run query</button>
+            </div>
+        </form>
+    </section>
+</div>
+<div class="container">
+    {% if info %}
+    <h4>Полученный ответ:</h4>
+    <section>
+        {% for string in info %}
+        <p style="margin: 0 0; padding: 0 0; border: 0">
+            {{ string }}
+        </p>
+        {% endfor %}
+    </section>
+
+    {% endif %}
+</div>
+</body>
+</html>
