@@ -18,13 +18,13 @@ app.mount("/static", static_dir, name="static")
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
     images = []
-    for image_name in os.listdir(static_path / "Task6" / "images"):
-        with Image.open(static_path / "Task6" / "images" / str(image_name)) as image:
+    for image_name in os.listdir(static_path / "images"):
+        with Image.open(static_path / "images" / str(image_name)) as image:
             width, height = image.size
         is_hidden = width == 800 and height == 600
         hashed_image_name = str(hash(image_name)) + ".jpg"
-        os.rename(static_path / "Task6" / "images" / str(image_name),
-                  static_path / "Task6" / "images" / hashed_image_name)
+        os.rename(static_path / "images" / str(image_name),
+                  static_path / "images" / hashed_image_name)
         images.append((hashed_image_name, is_hidden))
 
     random.shuffle(images)
