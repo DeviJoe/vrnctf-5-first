@@ -18,7 +18,7 @@ extra:
     decay: 10
     minimum: 10
 
-connection_info: nc hostname 5678
+connection_info: nc vrnctf.ru 5678
 
 flags:
   - {

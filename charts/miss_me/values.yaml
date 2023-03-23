@@ -5,15 +5,15 @@
 replicaCount: 1
 
 image:
-  repository: cr.yandex/crporsf3eaalprla3ci5/brute_me
+  repository: cr.yandex/crporsf3eaalprla3ci5/miss_me
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v1"
 
 imagePullSecrets:
   - name: regcred
-nameOverride: "bruteme"
-fullnameOverride: "bruteme"
+nameOverride: "missme"
+fullnameOverride: "missme"
 
 serviceAccount:
   # Specifies whether a service account should be created
