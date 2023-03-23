@@ -10,7 +10,7 @@ from PIL import Image
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
-static_path = Path(__file__).parent / "static"
+static_path = "static"
 static_dir = StaticFiles(directory=static_path)
 app.mount("/static", static_dir, name="static")
 
