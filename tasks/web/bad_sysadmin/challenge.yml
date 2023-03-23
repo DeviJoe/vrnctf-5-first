@@ -9,6 +9,8 @@ name: Bad Sysadmin
 author: "@Gaster21"
 # Описание таска на платформе.
 description: | 
+  `@Gaster21`
+
   Нам походу нужен сис админ по-лучше!
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
 category: web
@@ -69,4 +71,4 @@ flags:
 # Отображение на платформе. visible/hidden
 state: visible
 # Версия вашей задачи
-#version: "0.1"
+version: "0.1"
