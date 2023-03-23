@@ -10,7 +10,7 @@ author: "@Gaster21"
 # Описание таска на платформе.
 description: | 
   `@Gaster21`
-  
+
   Не, этот сисадмин тоже не подходит, давайте следующего!
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
 category: web
@@ -29,7 +29,7 @@ extra:
 
 # Опциональные настройки, включайте по мере необходимости
 # Коннект к удаленной машине, может быть nc или URL к сайту
-# connection_info: nc hostname 12345
+connection_info: https://medical.vrnctf.ru
 
 # Флаги. Их может быть очень много, но обычно делают один
 flags:
