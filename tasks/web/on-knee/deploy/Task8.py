@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from fastapi import FastAPI, Response, Form, Depends
-from sqlalchemy import create_engine, Column, String, Integer
+from sqlalchemy import create_engine, Column, String, Integer, Boolean
 from sqlalchemy.orm import sessionmaker, declarative_base, Session
 from starlette import status
 from starlette.requests import Request
@@ -73,7 +73,75 @@ class Card:
         self.id_end = end
 
 
+class Post(Base):
+    __tablename__ = "posts"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    title = Column(String)
+    text = Column(String)
+    visible = Column(Boolean)
+
+
+def fill_tables():
+    db = SessionLocal()
+
+    with open("static/Task8/txt/memes.txt", "r") as memes_txt:
+        memes = memes_txt.readlines()
+        for meme in memes:
+            mem = Meme(memes_string=meme)
+            db.add(mem)
+            db.commit()
+            db.refresh(mem)
+
+    with open("static/Task8/txt/amoguses.txt", "r") as amoguses_txt:
+        amoguses = amoguses_txt.readlines()
+        for amogus_line in amoguses:
+            sus = Amogus(amoguses_string=amogus_line)
+            db.add(sus)
+            db.commit()
+            db.refresh(sus)
+
+    with open("static/Task8/txt/animes.txt", "r") as animes_txt:
+        animes = animes_txt.readlines()
+        for anime_line in animes:
+            anim = Anime(animes_string=anime_line)
+            db.add(anim)
+            db.commit()
+            db.refresh(anim)
+
+    with open("static/Task8/txt/geese.txt", "r") as geese_txt:
+        geese = geese_txt.readlines()
+        for goose in geese:
+            gos = Goose(geese_string=goose)
+            db.add(gos)
+            db.commit()
+            db.refresh(gos)
+
+    with open("static/Task8/txt/posts.txt", "r") as posts_txt:
+        posts = posts_txt.readlines()
+        for post in posts:
+            splitted_post = post.split(" | ")
+            visible = False if int(splitted_post[-1]) == 0 else True
+            post_db = Post(title=splitted_post[0], text=splitted_post[1], visible=visible)
+            db.add(post_db)
+            db.commit()
+            db.refresh(post_db)
+
+    with open("static/Task8/txt/users.txt", "r") as users_txt:
+        users = users_txt.readlines()
+        for user in users:
+            splitted_user = user.split(" | ")
+            user_db = Users(login=splitted_user[0], password=splitted_user[-1])
+            db.add(user_db)
+            db.commit()
+            db.refresh(user_db)
+
+    db.close()
+
+
+Base.metadata.drop_all(bind=engine)
 Base.metadata.create_all(bind=engine)
+fill_tables()
 
 
 @app.get("/")
