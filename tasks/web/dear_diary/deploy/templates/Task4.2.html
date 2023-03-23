@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Сервис?</title>
+</head>
+<body>
+{% if not update %}
+{% if post %}
+<div class="container">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <h1 class="title">{{ post.title }}</h1>
+            <a href="{{ url_for('root') }}" class="btn btn-primary">Вернуться к постам</a>
+            <a href="{{ url_for('update_post_page', post_number=post.id) }}" class="btn btn-primary">Редактировать
+                пост</a>
+        </div>
+    </nav>
+    <p>
+        {{ post.text }}
+    </p>
+</div>
+{% else %}
+ПОСТ НЕ НАЙДЕН, ПОПРОБУЙТЕ ДРУГОЙ ID
+{% endif %}
+{% else %}
+<div class="container">
+    {% if new %}
+    <form method="POST" action="{{ url_for('create_new_post_page', post_number=post.id) }}">
+        {% else %}
+        <form method="POST" action="{{ url_for('post_post_page', post_number=post.id) }}">
+            {% endif %}
+            <div class="mb-3 row">
+                <div>
+                    <label for="title" class="col-sm-2 col-form-label">Название</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="title" name="title" title="{{post.title}}">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div>
+                    <label for="text" class="col-sm-2 col-form-label">Описание</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="text" name="text" title="{{post.text}}">
+                </div>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">
+                    {% if new %}
+                    Создать
+                    {% else %}
+                    Изменить
+                    {% endif %}
+                </button>
+            </div>
+        </form>
+</div>
+{% endif %}
+
+</body>
+</html>
