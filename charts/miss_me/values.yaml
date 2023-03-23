@@ -39,7 +39,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 5678
+  port: 5679
 
 ingress:
   enabled: false
