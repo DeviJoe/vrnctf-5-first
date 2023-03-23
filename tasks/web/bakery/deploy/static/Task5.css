@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-control .admin {
+    display: none;
+    pointer-events: none !important;
+    visibility: hidden;
+}
