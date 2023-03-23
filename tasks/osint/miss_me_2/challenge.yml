@@ -1,4 +1,4 @@
-name: miss_me_2
+name: "miss me 2: society"
 author: "@jim_amlt"
 description: |
   `@jim_amlt`\
@@ -16,7 +16,7 @@ flags:
   - vrnctf{70_c0nqu3r_w17h0u7_d357r0y1n6}
 
 requirements:
-  - "miss_me"
+  - "miss me 1: city"
 
 state: visible
 version: "0.1"
