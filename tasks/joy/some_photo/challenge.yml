@@ -13,7 +13,7 @@ description: |
   
   Сделайте фото, выложите с хештегом vrnctf, скиньте ссылку на запись в лс автору и получите заветный флаг
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
-category: web
+category: joy
 # Оставляем как есть - цена таски
 value: 100
 # Не трогаем - тип соревнования
