@@ -1,7 +1,8 @@
 name: Strange file
 author: "@Ichinichi"
 description: | 
-  `@Ichinichi`\
+  `@Ichinichi`
+  
   При задержании преступник решил удалить все файлы с жесткого диска, но все что он успел - стереть расширения.
   Определите тип файла, и узнайте, что внутри
 category: forensic

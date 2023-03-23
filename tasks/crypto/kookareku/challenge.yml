@@ -5,7 +5,8 @@ name: Kookareku
 author: "@alexereh"
 # Описание таска на платформе.
 description: | 
-  `@alexereh`\
+  `@alexereh`
+  
   Боб писал сочинение, но в момент написания самой важной части он... 
   превратился в петуха? Что?
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto

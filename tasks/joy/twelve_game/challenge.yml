@@ -5,7 +5,8 @@ name: Twelve
 author: "@alexereh"
 # Описание таска на платформе.
 description: | 
-  `@alexereh`\
+  `@alexereh`
+  
   Ого, настоящие игры!
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
 category: joy

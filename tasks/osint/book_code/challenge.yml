@@ -9,7 +9,8 @@ name: Find me
 author: "@kotz1k"
 # Описание таска на платформе.
 description: | 
-  `@kotz1k`\
+  `@kotz1k`
+  
   Таска, у которой в описании нет ничего))) 
   Почти ничего, напоминаю, что флаг на английском языке!!!
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto

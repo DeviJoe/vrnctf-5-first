@@ -5,7 +5,8 @@ name: Это баз... наистандартнейший шифр
 author: "@alexereh"
 # Описание таска на платформе.
 description: | 
-  `@alexereh`\
+  `@alexereh`
+  
   Без лишних слов...
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
 category: crypto

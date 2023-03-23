@@ -9,7 +9,8 @@ name: Matryoshka
 author: "@kotz1k"
 # Описание таска на платформе.
 description: | 
-  `@kotz1k`\
+  `@kotz1k`
+  
   Что-то нам подсказывает, что фотографии могут быть не только фотографиями...
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
 category: stegano

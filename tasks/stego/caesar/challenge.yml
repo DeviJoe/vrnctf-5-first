@@ -9,7 +9,8 @@ name: Caesar
 author: "@kotz1k"
 # Описание таска на платформе.
 description: | 
-  `@kotz1k`\
+  `@kotz1k`
+  
   Наруто пришел покушоть, но остался только цезарь. Пришлось кушоть его(((
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
 category: stegano

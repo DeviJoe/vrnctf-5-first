@@ -9,7 +9,8 @@ name: First letters
 author: "@kotz1k"
 # Описание таска на платформе.
 description: | 
-  `@kotz1k`\
+  `@kotz1k`
+  
   Мы получили сообщение, но в нем что-то не то с первыми буквами предложений...
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
 category: stegano
