@@ -1,0 +1,51 @@
+# Обязательные поля
+# Имя задачи на CTFd
+name: ESOTERIC
+# Никнейм в Telegram
+author: "@alexereh"
+# Описание таска на платформе.
+description: | 
+  `@alexereh`
+  
+  Петя писал программу для раскодирования какой-то конкретной информации на новом языке программирования, который он изучил. 
+  Но что-то пошло не так, и выяснилось, что у Пети были лапки...
+# Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
+category: misc
+# Оставляем как есть - цена таски
+value: 100
+# Не трогаем - тип соревнования
+type: dynamic
+
+extra:
+    # Стартовая цена
+    initial: 100
+    # Сколько команд должны решить, чтобы цена упала до минимума
+    decay: 10
+    # Минимальная цена
+    minimum: 10
+
+# Флаг.
+flags:
+  - vrnctf{L0L_WH47}
+
+
+# Для админов
+# topics:
+#   - information disclosure
+#   - buffer overflow
+#   - memory forensics
+
+# Для участников
+# tags:
+#   - web
+#   - sandbox
+#   - js
+
+# Секция с файликами, которые отдаются участниками. Относительный путь от папки public
+files:
+  - public/program.source
+  
+# Отображение на платформе. visible/hidden
+state: visible
+# Версия вашей задачи
+version: "0.1"
