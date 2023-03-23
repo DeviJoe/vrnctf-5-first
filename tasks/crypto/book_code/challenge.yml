@@ -14,7 +14,7 @@ description: |
   Таска, у которой в описании нет ничего))) 
   Почти ничего, напоминаю, что флаг на английском языке!!!
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
-category: osint
+category: crypto
 # Оставляем как есть - цена таски
 value: 100
 # Не трогаем - тип соревнования
