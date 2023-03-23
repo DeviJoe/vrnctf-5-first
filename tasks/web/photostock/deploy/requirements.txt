@@ -4,4 +4,4 @@ SQLAlchemy==2.0.7
 starlette==0.26.1
 typing-extensions==4.5.0
 uvicorn==0.21.1
-pillow
+Pillow==9.4.0
