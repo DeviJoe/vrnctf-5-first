@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Directory Listing</title>
+	<script>
+		function openDirectory(path) {
+			window.location.href = "/directory/" + encodeURIComponent(path);
+		}
+	</script>
+</head>
+<body>
+	<h1>Directory Listing</h1>
+    {% if first %}
+	<h2>Directories:</h2>
+	<ul>
+	{% for dir in dirs %}
+		<li><a href="#" onclick="openDirectory('{{ dir }}')">{{ dir }}</a></li>
+	{% endfor %}
+	</ul>
+	<h2>Files:</h2>
+	<ul>
+	{% for file in files %}
+		<li>{{ file }}</li>
+	{% endfor %}
+	</ul>
+    {% else %}
+<h1>{{ path }}</h1>
+  <h2>Directories:</h2>
+  <ul>
+    {% for dir in dirs %}
+      <li>
+        <a href="/directory/{{ dir.path }}">{{ dir.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <h2>Files:</h2>
+  <ul>
+    {% for file in files %}
+      <li><a href="/file/{{ file }}">{{ file }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
+</body>
+</html>
