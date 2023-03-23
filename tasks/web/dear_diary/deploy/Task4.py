@@ -28,6 +28,49 @@ def get_db():
         db.close()
 
 
+class Users(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    login = Column(String)
+    password = Column(String)
+
+
+class Goose(Base):
+    __tablename__ = "geese"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    geese_string = Column(String)
+
+
+class Amogus(Base):
+    __tablename__ = "amoguses"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    amoguses_string = Column(String)
+
+
+class Anime(Base):
+    __tablename__ = "animes"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    animes_string = Column(String)
+
+
+class Meme(Base):
+    __tablename__ = "memes"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    memes_string = Column(String)
+
+
+class Card:
+    def __init__(self, text_list: list[str], start: int, end: int):
+        self.text = "\n".join(text_list)
+        self.id_start = start
+        self.id_end = end
+
+
 class Post(Base):
     __tablename__ = "posts"
 
@@ -37,7 +80,66 @@ class Post(Base):
     visible = Column(Boolean)
 
 
+def fill_tables():
+    db = SessionLocal()
+
+    with open("static/txt/memes.txt", "r") as memes_txt:
+        memes = memes_txt.readlines()
+        for meme in memes:
+            mem = Meme(memes_string=meme)
+            db.add(mem)
+            db.commit()
+            db.refresh(mem)
+
+    with open("static/txt/amoguses.txt", "r") as amoguses_txt:
+        amoguses = amoguses_txt.readlines()
+        for amogus_line in amoguses:
+            sus = Amogus(amoguses_string=amogus_line)
+            db.add(sus)
+            db.commit()
+            db.refresh(sus)
+
+    with open("static/txt/animes.txt", "r") as animes_txt:
+        animes = animes_txt.readlines()
+        for anime_line in animes:
+            anim = Anime(animes_string=anime_line)
+            db.add(anim)
+            db.commit()
+            db.refresh(anim)
+
+    with open("static/txt/geese.txt", "r") as geese_txt:
+        geese = geese_txt.readlines()
+        for goose in geese:
+            gos = Goose(geese_string=goose)
+            db.add(gos)
+            db.commit()
+            db.refresh(gos)
+
+    with open("static/txt/posts.txt", "r") as posts_txt:
+        posts = posts_txt.readlines()
+        for post in posts:
+            splitted_post = post.split(" | ")
+            visible = False if int(splitted_post[-1]) == 0 else True
+            post_db = Post(title=splitted_post[0], text=splitted_post[1], visible=visible)
+            db.add(post_db)
+            db.commit()
+            db.refresh(post_db)
+
+    with open("static/txt/users.txt", "r") as users_txt:
+        users = users_txt.readlines()
+        for user in users:
+            splitted_user = user.split(" | ")
+            user_db = Users(login=splitted_user[0], password=splitted_user[-1])
+            db.add(user_db)
+            db.commit()
+            db.refresh(user_db)
+
+    db.close()
+
+
+Base.metadata.drop_all(bind=engine)
 Base.metadata.create_all(bind=engine)
+fill_tables()
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
