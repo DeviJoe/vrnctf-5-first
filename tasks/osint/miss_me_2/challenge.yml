@@ -1,0 +1,23 @@
+name: miss_me_2
+author: "@jim_amlt"
+description: |
+  Может поискать что-то еще рядом?
+category: osint
+value: 100
+type: dynamic
+
+extra:
+  initial: 100
+  decay: 10
+  minimum: 10
+
+connection_info: nc hostname 5678
+
+flags:
+  - vrnctf{70_c0nqu3r_w17h0u7_d357r0y1n6}
+
+requirements:
+  - "miss_me"
+
+state: visible
+version: "0.1"

@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  miss_me2:
+    build: .
+    ports:
+        - "5678:5678"
