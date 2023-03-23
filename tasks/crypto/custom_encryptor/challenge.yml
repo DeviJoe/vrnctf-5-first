@@ -5,6 +5,7 @@ name: Encryptor
 author: "@alexereh"
 # Описание таска на платформе.
 description: | 
+  "`@alexereh`"\
   "Была обнаружена программа, которая делает из буковок... циферки... :flushed:"
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
 category: crypto
