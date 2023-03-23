@@ -60,8 +60,9 @@ def generate_random_dirs(root_path, depth, max_dirs, max_files):
             all_dirs.append(os.path.join(root, dir))
 
     random_dir = random.choice(all_dirs)
-    file_path = os.path.join(random_dir, "flag.txt")
-    file_dict["flag.txt"] = file_path
+    file_name = random_string(10) + ".txt"
+    file_path = os.path.join(random_dir, file_name)
+    file_dict[file_name] = file_path
     print(file_path)
     with open(file_path, "w") as f:
         f.write(flag)
