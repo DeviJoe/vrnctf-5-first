@@ -20,9 +20,6 @@
             {% for post in posts %}
             {% if post.visible %}
             <div class="card text-center mb-3" style="margin-top: 10px">
-                <div class="card-header">
-                    Номер {{ post.id }}
-                </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ post.title }}</h5>
                     <p class="card-text">{{ post.text }}</p>
