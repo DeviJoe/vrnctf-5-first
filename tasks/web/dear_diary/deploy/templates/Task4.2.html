@@ -13,8 +13,8 @@
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
             <h1 class="title">{{ post.title }}</h1>
-            <a href="{{ url_for('root') }}" class="btn btn-primary">Вернуться к постам</a>
-            <a href="{{ url_for('update_post_page', post_number=post.id) }}" class="btn btn-primary">Редактировать
+            <a href="{{ url_for('root') | replace('http', 'https') }}" class="btn btn-primary">Вернуться к постам</a>
+            <a href="{{ url_for('update_post_page', post_number=post.id) | replace('http', 'https') }}" class="btn btn-primary">Редактировать
                 пост</a>
         </div>
     </nav>
@@ -28,9 +28,9 @@
 {% else %}
 <div class="container">
     {% if new %}
-    <form method="POST" action="{{ url_for('create_new_post_page', post_number=post.id) }}">
+    <form method="POST" action="{{ url_for('create_new_post_page', post_number=post.id) | replace('http', 'https') }}">
         {% else %}
-        <form method="POST" action="{{ url_for('post_post_page', post_number=post.id) }}">
+        <form method="POST" action="{{ url_for('post_post_page', post_number=post.id) | replace('http', 'https') }}">
             {% endif %}
             <div class="mb-3 row">
                 <div>

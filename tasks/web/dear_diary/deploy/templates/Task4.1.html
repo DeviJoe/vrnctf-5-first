@@ -11,7 +11,7 @@
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
             <h1 class="title">Наши посты</h1>
-            <a href="{{ url_for('new_post_page') }}" class="btn btn-primary">Добавить свой пост</a>
+            <a href="{{ url_for('new_post_page') | replace('http', 'https') }}" class="btn btn-primary">Добавить свой пост</a>
         </div>
     </nav>
     {% if posts %}
@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ post.title }}</h5>
                     <p class="card-text">{{ post.text }}</p>
-                    <a href="{{ url_for('get_post_page', post_number=post.id) }}" class="btn btn-primary">Открыть в
+                    <a href="{{ url_for('get_post_page', post_number=post.id) | replace('http', 'https') }}" class="btn btn-primary">Открыть в
                         отдельной странице</a>
                 </div>
             </div>
