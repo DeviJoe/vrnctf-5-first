@@ -20,4 +20,4 @@ async def submit_form(login: str = Form(), password: str = Form()):
     if login == "admin" and password == "admin":
         return {"message": "vrnctf{f1nd_600d_4dm1n}"}
     else:
-        return {"message": "Не верный логин/пароль"}
+        return {"message": "Ooops, you are not authorized! Please, enter correct login or password"}
