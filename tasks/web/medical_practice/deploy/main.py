@@ -20,4 +20,4 @@ async def submit_form(login: str = Form(), password: str = Form()):
     if login == "or 1=1--" in login or "or 1=1" in login:
         return {"message": "vrnctf{5ql_b3_0r_b3?}"}
     else:
-        return {"message": "Не верный логин/пароль"}
+        return {"message": "Login/Password is not correct!"}
