@@ -17,6 +17,9 @@ extra:
 flags:
   - vrnctf{r6b_fr35c0}
 
+hints:
+  - На этот раз чуйка товарища майора подсказывает, что тут закодирован файл
+
 files:
   - public/image.png
 
