@@ -1,0 +1,23 @@
+name: "miss me 4: time"
+author: "@jim_amlt"
+description: |
+  `@jim_amlt`
+
+  Прошлое хранит множество тайн, но изобрели ли люди машину времени?
+category: osint
+value: 100
+type: dynamic
+
+extra:
+  initial: 100
+  decay: 10
+  minimum: 10
+
+flags:
+  - vrnctf{4l73r_360_15_4l50_y0u}
+
+requirements:
+  - "miss me 3: name"
+
+state: visible
+version: "0.1"
