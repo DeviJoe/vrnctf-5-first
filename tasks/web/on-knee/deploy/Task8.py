@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from fastapi import FastAPI, Response, Form, Depends
@@ -14,12 +15,12 @@ templates = Jinja2Templates(directory="templates")
 static_path = Path(__file__).parent / "static"
 app.mount("/static", StaticFiles(directory=static_path), name="static")
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./database/db.db"
-
-engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+print(db_path := os.getenv("SQLALCHEMY_DATABASE_URL"))
+engine = create_engine(db_path)
+SessionLocal = sessionmaker(bind=engine)
 
 Base = declarative_base()
+metadata = Base.metadata
 
 
 def get_db():
@@ -73,15 +74,6 @@ class Card:
         self.id_end = end
 
 
-class Post(Base):
-    __tablename__ = "posts"
-
-    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    title = Column(String)
-    text = Column(String)
-    visible = Column(Boolean)
-
-
 def fill_tables():
     db = SessionLocal()
 
@@ -117,16 +109,6 @@ def fill_tables():
             db.commit()
             db.refresh(gos)
 
-    with open("static/Task8/txt/posts.txt", "r") as posts_txt:
-        posts = posts_txt.readlines()
-        for post in posts:
-            splitted_post = post.split(" | ")
-            visible = False if int(splitted_post[-1]) == 0 else True
-            post_db = Post(title=splitted_post[0], text=splitted_post[1], visible=visible)
-            db.add(post_db)
-            db.commit()
-            db.refresh(post_db)
-
     with open("static/Task8/txt/users.txt", "r") as users_txt:
         users = users_txt.readlines()
         for user in users:
@@ -139,8 +121,8 @@ def fill_tables():
     db.close()
 
 
-Base.metadata.drop_all(bind=engine)
-Base.metadata.create_all(bind=engine)
+metadata.drop_all(bind=engine)
+metadata.create_all(bind=engine)
 fill_tables()
 
 
