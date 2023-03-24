@@ -11,7 +11,7 @@ author: "@kotz1k"
 description: | 
   wow it's flag - vrnctf{hello_world}
 
-  <img src = "https://3.downloader.disk.yandex.ru/preview/453fa9b3662ff599e6c4e723a81f39888ab1ffd56abecd21c05606e126ad8853/inf/NePWj0wabjYrvLIlmfeGCoB1TqLtAevRPf2tJOV5cgtYkVtbNsJIfhie1xdUopoR_OH0K0-l25yRtLW1alK8XQ%3D%3D?uid=574402728&filename=image_2023-03-24_13-30-35%20%282%29.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=574402728&tknv=v2&size=2560x648" style="max-width:100%; height:auto;">
+  <img src = "/files/380f9d8391d1b6f95318fc8e4d9465e5/hello_world.png" style="max-width:100%; height:auto;">
 # Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
 category: joy
 # Оставляем как есть - цена таски
