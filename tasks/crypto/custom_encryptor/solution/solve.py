@@ -12,7 +12,7 @@ def decrypt(cipher_text: str) -> str:
         curr_number += 1
     plain_text: list[str] = []
     for i in range(0, len(ct_list)):
-        plain_text += chr(int(float(str(ord(chr(int(ct_list[i]))) / primes_list[i] / (i + 1)))) // 1)
+        plain_text += chr(int(ct_list[i]) // primes_list[i] // (i + 1))
     return ''.join(plain_text)
 
 
