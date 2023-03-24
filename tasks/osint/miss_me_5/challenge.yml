@@ -1,0 +1,20 @@
+name: "miss me 5: best"
+author: "@jim_amlt"
+description: |
+  `@jim_amlt`
+
+  А может картинки все же не просто так?
+category: osint
+value: 100
+type: dynamic
+
+extra:
+  initial: 100
+  decay: 10
+  minimum: 10
+
+flags:
+  - vrnctf{b357_61rl5_1n_7h3_w0rld}
+
+state: visible
+version: "0.1"
