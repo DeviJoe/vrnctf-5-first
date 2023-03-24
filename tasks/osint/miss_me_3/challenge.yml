@@ -1,0 +1,23 @@
+name: "miss me 3: name"
+author: "@jim_amlt"
+description: |
+  `@jim_amlt`
+
+  Сочетание имени и фамилии часто бывает уникальным...
+category: osint
+value: 100
+type: dynamic
+
+extra:
+  initial: 100
+  decay: 10
+  minimum: 10
+
+flags:
+  - vrnctf{175-4_m3_m4r10}
+
+requirements:
+  - "miss me 2: society"
+
+state: visible
+version: "0.1"
