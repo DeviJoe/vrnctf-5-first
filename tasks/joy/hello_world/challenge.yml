@@ -8,7 +8,8 @@ name: Hello world
 # Никнейм в Telegram
 author: "@kotz1k"
 # Описание таска на платформе.
-description: | 
+description: |
+  '@kotzik' 
   wow it's flag - vrnctf{hello_world}
 
   <img src = "/files/380f9d8391d1b6f95318fc8e4d9465e5/hello_world.png" style="max-width:100%; height:auto;">
