@@ -17,6 +17,9 @@ extra:
 flags:
   - vrnctf{pl4y574710n_1m4g3}
 
+hints:
+  - Может попробовать преобразовать файл в более привычный?
+
 files:
   - public/file
 
