@@ -1,0 +1,51 @@
+# Манифест развертывания задачи на CTFd
+# Полный пример можно посмотреть в документации -- https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+# Необязательные, но нужные вам секции можно раскомментировать 
+# Обязательные поля
+# Имя задачи на CTFd
+name: Strange letter
+# Никнейм в Telegram
+author: "@Deskrejet"
+# Описание таска на платформе.
+description: | 
+  
+  Today I received a strange letter. Can you help me read it?
+  
+  
+  The flag needs to be converted to the correct format: vrnctf{SOME_TEXT}
+  
+# Одна из следующих категорий: web, reverse, pwn, osint, joy, forensic, stegano, crypto
+category: crypto
+# Оставляем как есть - цена таски
+value: 100
+# Не трогаем - тип соревнования
+type: dynamic
+extra:
+    # Стартовая цена
+    initial: 100
+    # Сколько команд должны решить, чтобы цена упала до минимума
+    decay: 10
+    # Минимальная цена
+    minimum: 10
+# Флаги. Их может быть очень много, но обычно делают один
+flags:
+  # Флаг можно задать так
+  - vrnctf{CONGRATULATIONS_SHERLOCK}
+# Примечания для админов, не видны участникам
+# Разрешены строки
+# topics:
+#   - information disclosure
+#   - buffer overflow
+#   - memory forensics
+# Публичны, видят участники. Можно вешать теги на задачи
+# tags:
+#   - web
+#   - sandbox
+#   - js
+# Секция с файликами, которые отдаются участниками. Относительный путь от папки public
+files:
+  - public/Letter.jpg
+# Отображение на платформе. visible/hidden
+state: visible
+# Версия вашей задачи
+version: "0.1"
