@@ -35,6 +35,9 @@ flags:
       content: "vrnctf{ACROSTIC}",
       data: "case_insensitive",
     }
+
+hints:
+ - Полученное слово оберните в vrnctf{}
   
 
 # Примечания для админов, не видны участникам
