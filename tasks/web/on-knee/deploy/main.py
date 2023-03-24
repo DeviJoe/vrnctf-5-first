@@ -77,7 +77,7 @@ class Card:
 def fill_tables():
     db = SessionLocal()
 
-    with open("static/Task8/txt/memes.txt", "r") as memes_txt:
+    with open("static/txt/memes.txt", "r") as memes_txt:
         memes = memes_txt.readlines()
         for meme in memes:
             mem = Meme(memes_string=meme)
@@ -85,7 +85,7 @@ def fill_tables():
             db.commit()
             db.refresh(mem)
 
-    with open("static/Task8/txt/amoguses.txt", "r") as amoguses_txt:
+    with open("static/txt/amoguses.txt", "r") as amoguses_txt:
         amoguses = amoguses_txt.readlines()
         for amogus_line in amoguses:
             sus = Amogus(amoguses_string=amogus_line)
@@ -93,7 +93,7 @@ def fill_tables():
             db.commit()
             db.refresh(sus)
 
-    with open("static/Task8/txt/animes.txt", "r") as animes_txt:
+    with open("static/txt/animes.txt", "r") as animes_txt:
         animes = animes_txt.readlines()
         for anime_line in animes:
             anim = Anime(animes_string=anime_line)
@@ -101,7 +101,7 @@ def fill_tables():
             db.commit()
             db.refresh(anim)
 
-    with open("static/Task8/txt/geese.txt", "r") as geese_txt:
+    with open("static/txt/geese.txt", "r") as geese_txt:
         geese = geese_txt.readlines()
         for goose in geese:
             gos = Goose(geese_string=goose)
@@ -109,7 +109,7 @@ def fill_tables():
             db.commit()
             db.refresh(gos)
 
-    with open("static/Task8/txt/users.txt", "r") as users_txt:
+    with open("static/txt/users.txt", "r") as users_txt:
         users = users_txt.readlines()
         for user in users:
             splitted_user = user.split(" | ")
