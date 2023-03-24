@@ -1,0 +1,5 @@
+enemy | spotted | 0
+csf | ctf | 0
+true | hacker | 0
+apple | android | 0
+John | Cena | 1
