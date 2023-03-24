@@ -60,8 +60,8 @@ def fill_tables():
     db.close()
 
 
-Base.metadata.drop_all(bind=engine)
-Base.metadata.create_all(bind=engine)
+metadata.drop_all(bind=engine)
+metadata.create_all(bind=engine)
 fill_tables()
 
 
