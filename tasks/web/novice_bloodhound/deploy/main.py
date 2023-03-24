@@ -18,6 +18,6 @@ async def root(request: Request):
 @app.post('/submit_form')
 async def submit_form(login: str = Form(), password: str = Form(), secret_key: str = Form()):
     if login == "pizza" and password == "pepperoni" and secret_key == "doublePepperoni":
-        return {"message": "Flag"}
+        return {"message": "vrnctf{1_l0v3_7h47_p3pp3r0n1}"}
     else:
         return {"message": "Не верный логин/пароль/ключ"}
