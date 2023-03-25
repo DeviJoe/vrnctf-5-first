@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3.10.8
 RUN apk add --no-cache gcc musl-dev linux-headers
 WORKDIR /app
 COPY requirements.txt ./
