@@ -67,6 +67,10 @@ def generate_random_dirs(root_path, depth, max_dirs, max_files):
     with open(file_path, "w") as f:
         f.write(flag)
 
+    if len(file_dict) > 400 or len(file_dict) < 350:
+        file_dict.clear()
+        generate_random_dirs(static_path / "root", 4, 5, 5)
+
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
@@ -75,7 +79,7 @@ static_dir = StaticFiles(directory=static_path)
 app.mount("/static", static_dir, name="static")
 
 flag = "vrnctf{7h3_b166357_l1br4ry_1_3v3r_533n}"
-generate_random_dirs(static_path / "root", 5, 10, 10)
+generate_random_dirs(static_path / "root", 4, 5, 5)
 
 
 @app.get('/directory/{path:path}')
