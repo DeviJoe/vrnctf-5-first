@@ -156,11 +156,17 @@ async def root(request: Request, response: Response, db: Session = Depends(get_d
             case (_, _):
                 table_info = None
     if table_info:
+        offset = cookies["offset"]
+        if offset == "-1":
+            table_info = [table_info[int(offset)]]
+        else:
+            offset = int(re.sub(r"[^\d.]+", "", cookies["offset"]))
+            table_info = table_info[offset:offset + 20]
         return templates.TemplateResponse(
             "Task8.html", {
                 "response": response,
                 "request": request,
-                "info": table_info[int(cookies["offset"]):int(cookies["offset"]) + 20]
+                "info": table_info
             }
         )
     else:
@@ -173,8 +179,14 @@ async def run_query(sql: str = Form()):
     query = sql.split()
     if "SELECT" in query and "*" in query and "FROM" in query and 4 <= len(query) <= 8:
         response.set_cookie(key="table", value=query[3].lower(), httponly=True)
-        if "WHERE" in query and "id" in query and ">" in query and len(query) == 8:
-            response.set_cookie(key="offset", value=query[-1], httponly=True)
+        if "WHERE" in query and ("id" in query or "string.id" in query) and \
+                (">" in query or "=" in query) and len(query) == 8:
+            if ">" in query and "=" not in query:
+                response.set_cookie(key="offset", value=query[-1], httponly=True)
+            elif "=" in query and ">" not in query:
+                response.set_cookie(key="offset", value="-1", httponly=True)
+            else:
+                response.set_cookie(key="offset", value=query[-1], httponly=True)
         else:
             response.set_cookie(key="offset", value="0", httponly=True)
     return response
