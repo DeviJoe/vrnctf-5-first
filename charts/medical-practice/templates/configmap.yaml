@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ .Chart.Name }}-task-db
-data:
-  SQLALCHEMY_DATABASE_URL: postgresql+psycopg2://task:tasktask@medical-pg-postgresql-0.medical-pg-postgresql-hl:5432/task_db
