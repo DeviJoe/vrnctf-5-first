@@ -7,4 +7,4 @@
 
 ## Scoreboard (Online зачет)
 
-![](images/online-1.png)
+![](images/online_1.png)
